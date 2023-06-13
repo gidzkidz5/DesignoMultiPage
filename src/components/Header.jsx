@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         
-        
+        <>
         <header className="flex">
             <div className="header-img">
             <NavLink to="/"><img  src={logo}></img></NavLink>
@@ -28,6 +28,7 @@ export default function Header() {
                 </ul>
             </nav>
         </header>
-       
+        <div id="darken-menu" data-visible={expanded}></div>
+        </>
     )
 }

@@ -169,6 +169,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100000000000;
 }
 
 .header-img img {
@@ -184,6 +185,7 @@ nav {
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 2px;
+  
 }
 
 nav ul li {
@@ -315,6 +317,17 @@ nav ul{
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 2px;
+
+}
+
+#darken-menu[data-visible="true"] {
+    /* display:none; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--clr-black) / 0.55);
+    z-index: 1000000;
+    transition: 0.3s ease-in-out 0.3s;
 
 }
 
@@ -1461,9 +1474,30 @@ footer {
 }
 .locations-text-container {
     background-color: hsl(var(--clr-lightpeach),0.15);
+    position: relative;
+    overflow: hidden;
 }
 .locations-text-container > h1 {
     color: #E7816B;
+}
+.locations-card-child {
+    position: relative;
+}
+
+.locations-text-container::after {
+    content: '';
+    background-image: url('../src/assets/shared/desktop/bg-pattern-two-circles.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left left;;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    
+    /* right: -9px; */
+
 }
 /* desktop */
 @media only screen and (min-width: 64.01em) {
@@ -1512,6 +1546,7 @@ footer {
 
     .locations-text-container h1:first-child {
         grid-row: 1/ span 1;
+        grid-column: 1 / span;
     }
 
     .locations-text-container div:nth-child(2) {
@@ -1524,8 +1559,9 @@ footer {
     .locations-text-container div:nth-child(3) {
         grid-row: 2 /span 1;
         grid-column: 2;
-        padding-right: 4.9rem;
-        /* margin-left: 5rem; */
+
+        /* padding-right: 4.9rem; */
+    
     }
 }
 /* tablet */
@@ -1558,7 +1594,7 @@ footer {
         row-gap: 2rem;
         
     }
-    /* 34.375vw; */
+
     .locations-text-container h1:first-child {
         grid-row: 1/ span 1;
         grid-column: 1 /span 2;
@@ -1592,7 +1628,22 @@ footer {
         gap: 1.5rem;
         padding-block: 80px;
     }
-
+ 
+    .locations-text-container::after  {
+        content: '';
+        background-image: url('../src/assets/shared/desktop/bg-pattern-three-circles.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position:left center;
+        opacity: 0.35;
+        scale: 1.9;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 40vw;
+        left: 45%;
+    }
 
 }
 
@@ -1642,7 +1693,7 @@ footer {
     z-index: -1;
     position: absolute;
     top: 0;
-    left: 205px;
+    left: 27vw;
     opacity: 0.3;
    
 }
@@ -1658,9 +1709,8 @@ footer {
     z-index: -1;
     position: absolute;
     top: 0;
-    right: 0px;
-    opacity: 0.4;
-   
+    right: -3vw;
+    opacity: 0.3;
 }
 
 
@@ -1812,10 +1862,15 @@ footer {
     border-right: none;
     border-left: none;
     outline: none;
+    cursor: text;
 }
 
+.contact-input:focus:hover {
+    cursor: text;
+}
 .contact-input:hover {
     border-bottom: 3px solid white;
+    cursor: pointer;
 }
 
 .contact-parent-container {
@@ -1848,7 +1903,6 @@ footer {
         justify-content: space-evenly;
         align-items: center;
         margin-bottom: 10rem ;
-        
     }
 
     .contact-parent-container::after {
@@ -1880,7 +1934,6 @@ footer {
         color: hsl(var(--clr-White));
         height: 40px;
         text-indent: 1.5rem;
-        
     }
 
     
