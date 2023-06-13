@@ -1,6 +1,6 @@
 import Header from "../components/Header"
 import LocationsIcons from "../components/LocationIcons"
-import Button1 from "../components/button1"
+import Button1 from "../components/Button1"
 import { NavLink } from "react-router-dom"
 
 export default function Contact() {
@@ -43,7 +43,6 @@ export default function Contact() {
 
                     <Button1 
                         title = "Submit"
-                        route = "/"
                     />
                 </form>
             </main>
