@@ -235,7 +235,7 @@ ul {
 #img-phone {
      position: absolute;
      top: 0;
-     right: -7%;
+     right: calc(2rem + -8%);
      /* margin-right: 100px; */
      z-index: 10;
      isolation: isolate;
@@ -456,6 +456,10 @@ nav ul{
     #home-text-container {
         max-width: 33.75rem;
         margin-bottom: 2.5rem;
+    }
+
+    #home-text-container h1 {
+        margin-bottom: 25px;
     }
 
     
