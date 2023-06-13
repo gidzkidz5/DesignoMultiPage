@@ -43,7 +43,7 @@ export default function Contact() {
 
                     <Button1 
                         title = "Submit"
-                        // route =
+                        route = "/"
                     />
                 </form>
             </main>
