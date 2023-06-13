@@ -14,7 +14,7 @@ export default function Header() {
         
         <header className="flex">
             <div className="header-img">
-            <NavLink to="/"><img  src="../src/assets/shared/desktop/logo-dark.png"></img></NavLink>
+            <NavLink to="/"><img  src="../assets/shared/desktop/logo-dark.png"></img></NavLink>
             </div>
             <button className="mobile-nav-toggle" aria-expanded={expanded} onClick={handleClick}>
             <span className="sr-only">Menu</span>
