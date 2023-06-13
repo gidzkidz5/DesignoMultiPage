@@ -1,5 +1,6 @@
 import Button1 from "./Button1";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/shared/desktop/logo-light.png";
 
 export default function Footer() {
 
@@ -19,7 +20,7 @@ export default function Footer() {
 
             <div id="black-footer" >
                 <div className="top-footer-container">
-                    <img  src="src\assets\shared\desktop\logo-light.png"/>
+                    <img  src={logo}/>
                     <div id="footer-line"></div>
                     <div className="uppercase footer-nav-container">
                         <ul className="flex ff-sanserif footer-nav font-white" >
