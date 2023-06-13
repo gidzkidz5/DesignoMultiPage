@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom";
+import logo from "../assets/shared/desktop/logo-dark.png";
 
 export default function Header() {
     const [expanded, setExpanded] = useState(false);
@@ -14,7 +15,7 @@ export default function Header() {
         
         <header className="flex">
             <div className="header-img">
-            <NavLink to="/"><img  src="../assets/shared/desktop/logo-dark.png"></img></NavLink>
+            <NavLink to="/"><img  src={logo}></img></NavLink>
             </div>
             <button className="mobile-nav-toggle" aria-expanded={expanded} onClick={handleClick}>
             <span className="sr-only">Menu</span>
