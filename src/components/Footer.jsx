@@ -1,4 +1,4 @@
-import Button1 from "./button1";
+import Button1 from "./Button1";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Footer() {
