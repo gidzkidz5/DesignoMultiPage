@@ -1,5 +1,5 @@
 import Button1 from "./Button1";
-import phone from "..\assets\home\desktop\image-hero-phone.png";
+import phone from "../assets/home/desktop/image-hero-phone.png";
 
 export default function HomeTitle() {
     return (
