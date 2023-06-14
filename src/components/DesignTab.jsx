@@ -5,7 +5,7 @@ export default function DesignTab ({title}) {
 
     return (
         
-        <div className="design-tab ff-sanserif uppercase font-white flex" >
+        <div className="design-tab ff-sanserif uppercase font-white flex" id={title.toLowerCase()}>
             <div className="after" ></div>
             <Link to={"../" + title + "-design"}></Link>
             

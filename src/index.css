@@ -561,7 +561,7 @@ nav ul{
     }
 
     .design-tab {
-        background-image: url("../src/assets/home/mobile/image-web-design.jpg");
+        
         /* background-color: hsl(var(--clr-black) / 0.5); */
         background-position: center center;
         margin-inline: 1.5rem;
@@ -586,6 +586,16 @@ nav ul{
         justify-content: space-between;
       
     }
+
+    #web {
+        background-image: url("../src/assets/home/mobile/image-web-design.jpg");
+    }
+    #app {
+        background-image: url("../src/assets/home/mobile/image-app-design.jpg");
+    }
+    #graphic {
+        background-image: url("../src/assets/home/mobile/image-graphic-design.jpg");
+    }
 }
 
 /*  tablet  */
@@ -598,7 +608,6 @@ nav ul{
     }
 
     .design-tab {
-        background-image: url("../src/assets/home/tablet/image-web-design.jpg");
         /* background-color: hsl(var(--clr-black) / 0.5); */
         background-position: center center;
         background-size: cover;
@@ -652,6 +661,16 @@ nav ul{
         position: relative;
     }
 
+    #web {
+        background-image: url("../src/assets/home/tablet/image-web-design.jpg");
+    }
+    #app {
+        background-image: url("../src/assets/home/tablet/image-app-design.jpg");
+    }
+    #graphic {
+        background-image: url("../src/assets/home/tablet/image-graphic-design.jpg");
+    }
+
 }
 
 /* desktop */
@@ -671,7 +690,7 @@ nav ul{
         height: auto;
     }
     .design-tab {
-        background-image: url("../src/assets/home/desktop/image-web-design-small.jpg");
+      
         /* background-color: hsl(var(--clr-black) / 0.5); */
         background-position: center center;
         background-size: cover;
@@ -700,6 +719,15 @@ nav ul{
 
     .design-page-bot-container .design-tab{
         width: 100%;
+    }
+    #web {
+        background-image: url("../src/assets/home/desktop/image-web-design-small.jpg");
+    }
+    #app {
+        background-image: url("../src/assets/home/desktop/image-app-design.jpg");
+    }
+    #graphic {
+        background-image: url("../src/assets/home/desktop/image-graphic-design.jpg");
     }
 }
 
