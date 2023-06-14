@@ -6,7 +6,7 @@ export default function ProductCard({ title, description, category }) {
 
     return (
         <div className="flex product-card">
-            <img src={"./" + category +"-design/desktop/image-" + title.split(' ').join('').replace('!','') + ".jpg"}/>
+            <img src={"./" + category +"-design/desktop/image-" + title.split(' ').join('').replace('!','') + ".jpg"} alt="product-card"/>
             <div className="ff-sanserif product-card-text-container flex">
                 <h1 className="uppercase fs-S">{title}</h1>
                 <h2 className="fs-body font-black">{description}</h2>

@@ -20,7 +20,7 @@ export default function Footer() {
 
             <div id="black-footer" >
                 <div className="top-footer-container">
-                    <img  src={logo}/>
+                    <img  src={logo} alt="logo"/>
                     <div id="footer-line"></div>
                     <div className="uppercase footer-nav-container">
                         <ul className="flex ff-sanserif footer-nav font-white" >
