@@ -128,6 +128,7 @@ li {
     background-color: hsl(var(--clr-White));
     border: none;
     cursor: pointer;
+ 
 }
 
 .btn:hover {
@@ -135,6 +136,18 @@ li {
     color: hsl(var(--clr-White));
 }
 
+.btn a {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn a span {
+    width: 100%;
+}
 @media (max-width: 35em) {
     body {
         
@@ -1878,7 +1891,6 @@ footer {
    z-index: 1;
    overflow: hidden;
    border-radius: 15px;
-
 }
 
 .contact-parent-container::after {
@@ -1893,8 +1905,10 @@ footer {
     position: absolute;
     top: -83px;
     left: -121.5px;
+}
 
-    
+.error.hide {
+    display: none;
 }
 /* Desktop */
 

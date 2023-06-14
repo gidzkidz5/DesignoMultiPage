@@ -1,9 +1,81 @@
 import Header from "../components/Header"
 import LocationsIcons from "../components/LocationIcons"
-import Button1 from "../components/Button1"
+import Button1 from "../components/Button1";
 import { NavLink } from "react-router-dom"
+import { useState } from "react";
 
 export default function Contact() {
+
+    const [error, setError ] = useState({})
+    const [ inputData, setInputData ] = useState(
+        {
+            fullname: "",
+            email: "",
+            phone: ""
+        })
+
+    function handleInputChange(e) {
+        const { name, value } = e.target;
+        setInputData( (prevData) => ({
+            ...prevData,
+            [name]: value}) );
+    }
+
+    function validateEmail(email) {
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        return emailRegex.test(email);
+      }
+
+  
+
+    function toSubmit(e) {
+
+        // const nameInput =  document.querySelectorAll('.contact-input')[0];
+        // const emailInput =  document.querySelectorAll('.contact-input')[1];
+        // const phoneInput =  document.querySelectorAll('.contact-input')[2];
+
+        const errorName = document.querySelectorAll('.error')[0];
+        const errorEmail = document.querySelectorAll('.error')[1];
+        const errorPhone = document.querySelectorAll('.error')[2];
+
+
+        let errors = {}
+
+        if (!inputData.fullname) {
+            e.preventDefault();
+            errors.fullname = 'This field is required'
+            errorName.classList.remove('hide')
+        }
+
+        if (!inputData.email){
+            e.preventDefault();
+            errors.email = 'This field is required'
+            errorEmail.classList.remove('hide')
+        } else if (!validateEmail(inputData.email)) {
+            e.preventDefault();
+            errors.email = 'Invalid email format'
+            errorEmail.classList.remove('hide')
+        }
+
+
+
+        if (!inputData.phone){
+            e.preventDefault();
+            errors.phone = 'This field is required'
+            errorPhone.classList.remove('hide');
+        }
+        
+
+        if (Object.keys(errors).length > 0) {
+            setError(errors);
+        } 
+       
+
+    }
+
+
     return (
         <div className="site-wrapper">
             <Header />
@@ -16,33 +88,46 @@ export default function Contact() {
                 </div>
                 <form className="contact-form">
                     <div>
-                        <input type="text" name="fullname" placeholder="Name" className="contact-input"/>
-                        <div className="error">
-                            <h1>Can't be empty</h1>
+                        <input type="text" name="fullname" placeholder="Name" className="contact-input" 
+                            value={inputData.fullname || ""} 
+                            onChange={handleInputChange}
+                        />
+                        <div className="error hide">
+                            <h1>{error.fullname}</h1>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FFF"/><path fill="#E7816B" d="M11 14v2H9v-2h2zm0-9v7H9V5h2z"/></g></svg>
                         </div>
                     </div>
 
                     <div>
-                        <input type="text" name="email" placeholder="Email" className="contact-input"/>
-                        <div className="error">
-                            <h1>Can't be empty</h1>
+                        <input type="text" name="email" placeholder="Email" className="contact-input" 
+                            value={inputData.email || ""} 
+                            onChange={handleInputChange}
+                        />
+                        <div className="error hide">
+                            <h1>{error.email}</h1>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FFF"/><path fill="#E7816B" d="M11 14v2H9v-2h2zm0-9v7H9V5h2z"/></g></svg>
                         </div>
                     </div>
 
                     <div>
-                        <input type="text" name="phone" placeholder="Phone" className="contact-input"/>
-                        <div className="error">
-                            <h1>Can't be empty</h1>
+                        <input type="text" name="phone" placeholder="Phone" className="contact-input" 
+                            value={inputData.phone || ""} 
+                            onChange={handleInputChange}
+                        />
+                        <div className="error hide">
+                            <h1>{error.phone}</h1>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FFF"/><path fill="#E7816B" d="M11 14v2H9v-2h2zm0-9v7H9V5h2z"/></g></svg>
                         </div>
                     </div>
 
-                    <textarea name="message" placeholder="Your Message" className="contact-input textarea"/>
+                    <textarea name="message" placeholder="Your Message" className="contact-input textarea" 
+                        value={inputData.message} 
+                        onChange={handleInputChange}
+                    />
 
                     <Button1 
                         title = "Submit"
+                        handleClick = {toSubmit}
                     />
                 </form>
             </main>
