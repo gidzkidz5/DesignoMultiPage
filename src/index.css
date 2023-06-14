@@ -1336,8 +1336,18 @@ footer {
     gap: 1rem;
 }
 
+.product-card-text-container:hover {
+    background-color: hsl(var(--clr-peach),0.95);
+    cursor: pointer;
+}
+
 .product-card-text-container h1 {
     color: #E7816B;
+}
+.product-card-text-container:hover h1,
+.product-card-text-container:hover h2
+ {
+    color: #FFFFFF;
 }
 
 /* desktop */
