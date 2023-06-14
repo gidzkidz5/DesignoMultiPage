@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import LocationsIcons from "../components/LocationIcons"
 import Button1 from "../components/Button1";
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { useState } from "react";
 
 export default function Contact() {
@@ -47,6 +47,8 @@ export default function Contact() {
             e.preventDefault();
             errors.fullname = 'This field is required'
             errorName.classList.remove('hide')
+        } else {
+            errorName.classList.add('hide')
         }
 
         if (!inputData.email){
@@ -57,6 +59,8 @@ export default function Contact() {
             e.preventDefault();
             errors.email = 'Invalid email format'
             errorEmail.classList.remove('hide')
+        } else {
+            errorEmail.classList.add('hide')
         }
 
 
@@ -65,6 +69,8 @@ export default function Contact() {
             e.preventDefault();
             errors.phone = 'This field is required'
             errorPhone.classList.remove('hide');
+        } else {
+            errorPhone.classList.add('hide')
         }
         
 
@@ -125,10 +131,13 @@ export default function Contact() {
                         onChange={handleInputChange}
                     />
 
+                    
                     <Button1 
+                        route=""
                         title = "Submit"
                         handleClick = {toSubmit}
                     />
+                    
                 </form>
             </main>
 
