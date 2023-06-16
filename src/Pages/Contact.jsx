@@ -3,6 +3,7 @@ import LocationsIcons from "../components/LocationIcons"
 import Button1 from "../components/Button1";
 import { Link, NavLink } from "react-router-dom"
 import { useState } from "react";
+import logo from "../assets/shared/desktop/logo-light.png";
 
 export default function Contact() {
 
@@ -145,7 +146,7 @@ export default function Contact() {
 
             <div id="black-footer" className="contact">
                 <div className="top-footer-container" style={{paddingTop: "5rem"}}>
-                    <img  src="src\assets\shared\desktop\logo-light.png"/>
+                    <img  src={logo}/>
                     <div id="footer-line"></div>
                     <div className="uppercase footer-nav-container">
                         <ul className="flex ff-sanserif footer-nav font-white" >
