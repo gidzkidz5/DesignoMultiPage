@@ -211,6 +211,7 @@ ul {
 
 .mobile-nav-toggle {
     display: none;
+    cursor: pointer;
 }
 
 .sr-only {
@@ -286,8 +287,8 @@ header {
     display: block;
     /* position: absolute; */
     z-index: 2000;
-    right: 1rem;
-    top: 2rem;
+    /* right: 1rem;
+    top: 2rem; */
     background-repeat: no-repeat;
     background-position: center;
     width: 1.5rem;
@@ -295,10 +296,12 @@ header {
     border: 0;
     background-color: transparent;
     z-index: 10000000;
+    cursor: pointer;
 }
 
 .mobile-nav-toggle[aria-expanded = "true"] {
     background-image: url(./assets/shared/mobile/icon-close.svg);
+    cursor: pointer;
     
 }
 
